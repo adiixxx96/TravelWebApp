@@ -30,6 +30,16 @@ public class UserDao {
         statement.executeUpdate();
     }
 
+    public boolean delete(String username) throws SQLException {
+        String sql = "DELETE FROM users WHERE username = ?";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, username);
+        int rows = statement.executeUpdate();
+
+        return rows == 1;
+    }
+
     public Optional<User> getUser(String password, String username) throws SQLException {
         String sql = "SELECT * FROM users WHERE password = ? AND username = ?";
         User user = null;
