@@ -4,15 +4,18 @@ import java.time.LocalDate;
 
 public class Booking {
     private String code;
-    private int userId;
-    private int tripId;
     private LocalDate bookingDate;
+    private User user;
+    private Trip trip;
 
-    public Booking(String code, int userId, int tripId, LocalDate bookingDate) {
+    public Booking() {
+    }
+
+    public Booking(String code, LocalDate bookingDate, User user, Trip trip) {
         this.code = code;
-        this.userId = userId;
-        this.tripId = tripId;
         this.bookingDate = bookingDate;
+        this.user = user;
+        this.trip = trip;
     }
 
     public String getCode() {
@@ -23,27 +26,27 @@ public class Booking {
         this.code = code;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public int getTripId() {
-        return tripId;
-    }
-
-    public void setTripId(int tripId) {
-        this.tripId = tripId;
-    }
-
     public LocalDate getBookingDate() {
         return bookingDate;
     }
 
     public void setBookingDate(LocalDate bookingDate) {
         this.bookingDate = bookingDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
     }
 }

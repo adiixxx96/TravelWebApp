@@ -7,6 +7,10 @@ public class Destination {
     private String area;
     private double score;
 
+    public Destination() {
+
+    }
+
     public Destination(String name, String area) {
         this.name = name;
         this.area = area;
@@ -41,7 +45,7 @@ public class Destination {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(String score) {
         this.score = score;
     }
 }

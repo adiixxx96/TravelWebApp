@@ -23,11 +23,16 @@ public class UserDao {
 
         String sql = "INSERT INTO users (name, username, password) VALUES (?, ?, ?)";
 
+        connection.setAutoCommit(false);
+
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, user.getName());
         statement.setString(2, user.getUsername());
         statement.setString(3, user.getPassword());
         statement.executeUpdate();
+
+        connection.commit();
+        connection.setAutoCommit(true);
     }
 
     public boolean delete(String username) throws SQLException {
@@ -40,20 +45,19 @@ public class UserDao {
         return rows == 1;
     }
 
-    public Optional<User> getUser(String password, String username) throws SQLException {
-        String sql = "SELECT * FROM users WHERE password = ? AND username = ?";
+    public Optional<User> login(String username, String password) throws SQLException {
+        String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
         User user = null;
 
         PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setString(1, password);
-        statement.setString(2, username);
+        statement.setString(1, username);
+        statement.setString(2, password);
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()) {
             user = new User();
             user.setId(resultSet.getInt("id"));
             user.setName(resultSet.getString("name"));
-            user.setUsername(resultSet.getString("password"));
-            user.setPassword(resultSet.getString("username"));
+            user.setUsername(resultSet.getString("username"));
         }
 
         return Optional.ofNullable(user);

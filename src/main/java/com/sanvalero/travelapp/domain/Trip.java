@@ -1,14 +1,26 @@
 package com.sanvalero.travelapp.domain;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Trip {
 
     private int id;
-    private int destinationId;
     private LocalDate startDate;
     private LocalDate endDate;
     private double price;
+    private Destination destination;
+
+    public Trip() {
+    }
+
+    public Trip(int id, LocalDate startDate, LocalDate endDate, double price, Destination destination) {
+        this.id = id;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.price = price;
+        this.destination = destination;
+    }
 
     public int getId() {
         return id;
@@ -18,15 +30,7 @@ public class Trip {
         this.id = id;
     }
 
-    public int getDestinationId() {
-        return destinationId;
-    }
-
-    public void setDestinationId(int destinationId) {
-        this.destinationId = destinationId;
-    }
-
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
@@ -34,7 +38,7 @@ public class Trip {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
@@ -50,12 +54,11 @@ public class Trip {
         this.price = price;
     }
 
-    public Trip(int destinationId, LocalDate startDate, LocalDate endDate, double price) {
-        this.destinationId = destinationId;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.price = price;
+    public Destination getDestination() {
+        return destination;
+    }
 
-
+    public void setDestination(Destination destination) {
+        this.destination = destination;
     }
 }
