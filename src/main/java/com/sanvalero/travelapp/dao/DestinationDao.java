@@ -92,7 +92,7 @@ public class DestinationDao {
         destination.setId(resultSet.getInt("id"));
         destination.setName(resultSet.getString("name"));
         destination.setArea(resultSet.getString("area"));
-        destination.setScore(resultSet.getString("score"));
+        destination.setScore(resultSet.getDouble("score"));
         return destination;
     }
 

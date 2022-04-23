@@ -45,7 +45,8 @@ public class Destination {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(double score) {
         this.score = score;
     }
 }
+

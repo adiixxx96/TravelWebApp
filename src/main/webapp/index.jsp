@@ -25,75 +25,25 @@
 
 <body>
 <jsp:include page="header.jsp" />
-<div class="wrapper">
-        <div class="slider" id="slider">
-          <ul class="slides">
-             <li class="slide" id="slider1">
-               <a href="#">
-                 <div class="caption">
-                  <p id="titulo">Sé un nómada, recorre el mundo</p>
-                  <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
-                </div>
-                 <img src="images/slider1.jpg" alt="slider 1">
-               </a>
-             </li>
-             <li class="slide" id="slider2">
-                <a href="#">
-                  <div class="caption">
-                    <p id="titulo">Sé un nómada, recorre el mundo</p>
-                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
-                  </div>
-                  <img src="images/slider2.jpg" alt="slider 2">
-               </a>
-             </li>
-             <li class="slide" id="slider3">
-                <a href="#">
-                  <div class="caption">
-                    <p id="titulo">Sé un nómada, recorre el mundo</p>
-                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
-                  </div>
-                  <img src="images/slider3.jpg" alt="slider 3">
-               </a>
-             </li>
-             <li class="slide" id="slider4">
-                <a href="#">
-                  <div class="caption">
-                    <p id="titulo">Sé un nómada, recorre el mundo</p>
-                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
-                  </div>
-                  <img src="images/slider4.jpg" alt="slider 4">
-               </a>
-             </li>
-             <li class="slide" id="slider5">
-                <a href="#">
-                  <div class="caption">
-                    <p id="titulo">Sé un nómada, recorre el mundo</p>
-                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
-                  </div>
-                  <img src="images/slider5.jpg" alt="slider 5">
-               </a>
-             </li>
-             <li class="slide">
-                <a href="#">
-                  <div class="caption">
-                    <p id="titulo">Sé un nómada, recorre el mundo</p>
-                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
-                  </div>
-                  <img src="images/slider1.jpg" alt="slider 5">
-               </a>
-             </li>
-          </ul>
-
-          <ul class="slider-controler">
-            <li><a href="#slider1">&bullet;</a></li>
-            <li><a href="#slider2">&bullet;</a></li>
-            <li><a href="#slider3">&bullet;</a></li>
-            <li><a href="#slider4">&bullet;</a></li>
-            <li><a href="#slider5">&bullet;</a></li>
-          </ul>
-        </div>
+ <!--Carrusel con animación automática y manual de js-->
+    <div class="carousel">
+      <div class="arrow-left"> <!--ir a slide anterior-->
+        <span class="arrow">&#x2039;</span>
       </div>
-    </header>
+      <img id=img src="images/slider1.jpg" alt="Carousel Image"> <!--la imagen cambia con js-->
+      <div class="arrow-right"> <!--ir a siguiente slide-->
+        <span class="arrow">&#x203A;</span>
+      </div>
+      <div class="indicators">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="titulo">Sé un nómada, recorre el mundo</p>
+    </div>
+    <!--script js para la animación del carrusel-->
+    <script type="text/javascript" src="js/slider.js"></script>
+  </header>
 
     <section class="contenedor" id="ofertas">
         <h3>Ofertas que no puedes perderte</h3>

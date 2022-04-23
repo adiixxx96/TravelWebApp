@@ -24,8 +24,8 @@ public class TripDao {
 
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, destination.getId());
-        statement.setDate(2, trip.getStartDate());
-        statement.setDate(3, trip.getEndDate());
+        statement.setDate(2, Date.valueOf(trip.getStartDate()));
+        statement.setDate(3, Date.valueOf(trip.getEndDate()));
         statement.setDouble(4, trip.getPrice());
         statement.executeUpdate();
 
