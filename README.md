@@ -5,7 +5,7 @@ He realizado la AA sobre una una web de viajes orientada hacia el cliente para q
 3. Viajes: viajes hacia un destino que están programados para una fecha y tienen un precio
 4. Reservas: son los viajes que ha reservado un usuario
 
-Adjunto en la carpeta bbdd de webapp del proyecto los archivos sql con la creación de las tablas y su parametrización, ya que hay una ligera modificación respecto a las entregadas en la AA de bbdd (tuve que añadir la cláusula delete on cascade para poder eliminar usuarios que tuviesen reservas).
+Adjunto en la carpeta bbdd de webapp del proyecto los archivos sql con la creación de las tablas y su parametrización, ya que hay una ligera modificación respecto a las entregadas en la AA de bbdd (tuve que añadir la cláusula delete on cascade para poder eliminar usuarios que tuviesen reservas) y también modificaciones en la parametrización.
 
 Para entrar a la web es necesario loguearse con alguno de los usuarios existentes o registrarse. 
 Puedes loguearte con:
