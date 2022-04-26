@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
+	font-size: 16px;
     width: 0, auto;
 }
 
@@ -56,6 +56,13 @@ body {
 	padding-bottom: 10px;
 }
 
+footer.contenedor-footer h4 {
+	text-align: center;
+	font-size: 14px;
+	color: #FFF;
+	padding-top: 40px;
+}
+
 footer.contenedor-negro h4 {
 	text-align: center;
 	font-size: 14px;
@@ -70,7 +77,28 @@ footer.contenedor-negro h4 {
 	color: #FFF;
 }
 
+.contenedor-footer {
+	background-color: #333;
+	padding: 60px, auto;
+    margin: auto;
+	margin-top: 80px;
+    overflow: hidden;
+	position: fixed;
+	width: 100%;
+}
+
+.contenedor-footer h4>a {
+	display: block;
+	text-align: left;
+	font-size: 14px;
+	color: #FFF;
+}
+
 .contenedor-negro h4>a:hover {
+	text-decoration: underline;
+}
+
+.contenedor-footer h4>a:hover {
 	text-decoration: underline;
 }
 
@@ -118,6 +146,8 @@ a.boton:hover {
     width: 80px;
     height: 80px;
     align-self: flex-start;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .enlaces {
@@ -141,139 +171,11 @@ a.boton:hover {
     display: inline-block;
     padding-left: 25px;
     font-size: 14px;
+    margin-top: 10px;
 }
 
-.arrow {
-	font-size: 51px;
-	font-weight: bold;
-	border-radius: 50%;
-	width: 50px;
-	height: 65px;
-	color: white;
-	text-align: center;
-	display: inline-block;
-	transition: all 0.3s ease;
-  }
-
-  .arrow:hover {
-	color: #121212;
-	background: white;
-	cursor: pointer;
-  }
-
-
-  .carousel {
-	position: relative;
-	display: block;
-	margin: 0 auto;
-	margin-top: 1%;
-  }
-
-  .arrow-left {
-	position: absolute;
-	left: 0;
-	top: 50%;
-	margin-left: 5px;
-	transform: translateY(-50%);
-  }
-
-  .arrow-right {
-	position: absolute;
-	right: 0;
-	top: 50%;
-	margin-right: 5px;
-	transform: translateY(-50%);
-  }
-
-  #img {
-	width: 100%;
-    height: 500px;
-  }
-
-  .d-none {
-	display: none;
-  }
-
-  .indicators {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 0;
-	margin-bottom: 10px;
-  }
-
-  #titulo {
-	position: absolute;
-	top: 50%;
-	left: 28%;
-	font-size: 50px;
-	font-weight: 700;
-	margin: 0 auto;
-	color: #EEE;
-}
-
-  .indicators>span {
-	display: inline-block;
-	border-radius: 50%;
-	width: 20px;
-	height: 20px;
-	background: white;
-  }
-
-  .indicators>span.active {
-	background: #EFC026;;
-  }
-
-#ofertas {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.viajes-oferta {
-	width: 100%;
-	padding: 0px 50px 50px 50px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-}
-
-.viajes-oferta-bloque {
-	display: flex;
-	flex-direction: column;
-}
-
-.viajes-oferta-bloque:hover {
-	transition: .5s all;
-	transform: scale(1.1);
-	cursor: pointer;
-}
-
-.viajes-oferta img {
-	width: 220px;
-	height: 250px;
-	border-radius: 15px;
-	display: inline-block;
-}
-
-.viajes-oferta h4 {
-	display: block;
-}
-
-.viajes-oferta p {
-	text-align: center;
-	font-weight: 600;
-	font-size: 14px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.viajes-oferta .boton {
-	max-width: 150px;
-	margin: auto;
-	padding: 15px 20px;
+.form-control {
+    width: 400px;
 }
 
 .beneficios {
@@ -335,89 +237,76 @@ a.boton:hover {
 	align-content: center;
 }
 
-.nuestros-viajes {
-	width: 90%;
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: flex-start;
-	padding-top: 20px
-}
+.modal-container {
+	background-color: rgba(0, 0, 0, 0.6);
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  }
 
-.nuestros-viajes-bloque {
-	padding: 15px;
-}
+  .modal-container.show-modal {
+	display: block;
+  }
 
-.nuestros-viajes-bloque:hover{
-	transition: .5s all;
-	transform: scale(1.05);
-}
-
-.nuestros-viajes img {
-	width: 190px;
-	height: 190px;
-	border-radius: 15px;
-}
-
-.buscador-viajes {
-	margin: auto;
-	width: 300px;
-	background-color: #FFF;
+  .modal {
+	background-color: #fff;
 	border-radius: 10px;
-	margin-top: 30px;
-}
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: absolute;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+	width: 400px;
+	animation-name: modalopen;
+	animation-duration: var(--modal-duration);
+  }
 
-.buscador-viajes:hover {
-	transition: .5s all;
-	transform: scale(1.1);
-	cursor: pointer;
-}
-
-.buscador-viajes:focus {
-	transition: .5s all;
-	transform: scale(1.1);
-	cursor: pointer;
-}
-
-.buscador-viajes i {
-	font-size: 20px;
-	padding: 5px 8px;
-}
-
-.buscador-viajes i:hover {
-	color: #EFC026;
-}
-
-.buscador-viajes #buscador {
-	border: none;
-	width: 250px;
-	height: 30px;
-	border-radius: 10px;
-	background-color: #FFF;
-	outline: none;
-	font-family: 'Montserrat', sans-serif;
-}
-
-input.boton {
-	width: 200px;
-	margin-top: 30px;
-	margin-bottom: 50px;
-	padding: 15px 20px;
-    background-color: #EFC026;
-	border: 1px solid #EFC026;
-    border-radius: 20px;
-	text-align: center;
+  .modal-header {
+	background: #333;
 	color: #fff;
-	font-family: 'Montserrat', sans-serif;
+	padding: 15px;
 	font-size: 16px;
-	font-weight: bold;
-}
+	text-align: center;
+  }
 
-input.boton:hover {
-	background-color: #F0A029;
-	border: 1px solid #F0A029;
+  .modal-header h3 {
+	margin: 0;
+	border-bottom: 1px solid #333;
+  }
+
+  .modal-content {
+	padding: 20px;
+	font-size: 14px;
+  }
+
+
+  .close-btn {
+	background: transparent;
+	color:#EEE;
+	font-size: 25px;
+	position: absolute;
+	top: 0;
+	right: 0;
+  }
+
+  @keyframes modalopen { /* transición abrir y cerrar modal*/
+	from {
+	  opacity: 0;
+	}
+
+	to {
+	  opacity: 1;
+	}
+  }
+
+footer {
+    position: fixed;
+    bottom: 0;
 }
 
 .footer {
@@ -450,6 +339,198 @@ footer .enlaces li{
 	font-size: 12px;
 	font-weight: normal;
 }
+
+@keyframes slide {
+	0% { transform: translateX(0); }
+	10% { transform: translateX(0); }
+
+	15% { transform: translateX(-100%); }
+	30% { transform: translateX(-100%); }
+
+	35% { transform: translateX(-200%); }
+	50% { transform: translateX(-200%); }
+
+	55% { transform: translateX(-300%); }
+	70% { transform: translateX(-300%); }
+
+	75% { transform: translateX(-400%); }
+	90% { transform: translateX(-400%); }
+
+	95% { transform: translateX(-500%); }
+	100% { transform: translateX(-500%); }
+}
+
+.wrapper {
+	max-width: 1200px;
+    height: 600px;
+	margin: 0 auto;
+}
+
+.slider {
+	position: relative;
+}
+
+.slides {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+}
+
+.slide {
+	width: 100vw;
+	flex-shrink: 0;
+	animation-name: slide;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.slides:hover .slide {
+	animation-play-state: paused;
+}
+
+.slide img {
+	width: 100%;
+    height: 600px;vertical-align: top;
+}
+
+.slide a {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.caption {
+	color: white;
+	position: absolute;
+	width: 80%;
+	top: 30%;
+	left: 9%;
+	margin: auto;
+	text-align: center;
+}
+
+#titulo {
+	font-size: 50px;
+	font-weight: 700;
+	margin: 0 auto;
+}
+
+#subtitulo {
+	font-size: 40px;
+	font-weight: 500;
+	padding-top: 100px;
+	margin: 0 auto;
+}
+
+
+.slide:target {
+	animation-name: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+}
+
+.slider-controler {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 5px;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+
+.slider-controler li {
+	margin: 0 0.5rem;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.slider-controler a {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	color: white;
+	font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 1200px) {
+	.slide {
+		width: 1200px;
+	}
+}
+
+.modal-container {
+    	background-color: rgba(0, 0, 0, 0.6);
+    	display: none;
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	bottom: 0;
+      }
+
+      .modal-container.show-modal {
+    	display: block;
+      }
+
+      .modal-cool {
+    	background-color: #fff;
+    	border-radius: 10px;
+    	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    	position: absolute;
+    	overflow: hidden;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    	max-width: 100%;
+    	width: 400px;
+    	animation-name: modalopen;
+    	animation-duration: var(--modal-duration);
+      }
+
+      .modal-header {
+    	background: #333;
+    	color: #fff;
+    	padding: 15px;
+    	font-size: 16px;
+    	text-align: center;
+      }
+
+      .modal-header h3 {
+    	margin: 0;
+    	border-bottom: 1px solid #333;
+      }
+
+      .modal-content {
+    	padding: 20px;
+    	font-size: 14px;
+      }
+
+
+      .close-btn {
+    	background: transparent;
+    	color:#EEE;
+    	font-size: 25px;
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+      }
+
+      @keyframes modalopen { /* transición abrir y cerrar modal*/
+    	from {
+    	  opacity: 0;
+    	}
+
+    	to {
+    	  opacity: 1;
+    	}
+      }
 
 @media (max-width: 750px) {
 	.menu {
@@ -516,4 +597,5 @@ footer .enlaces li{
 	.beneficios-bloque i {
 		font-size: 30px;
 	}
+
 }

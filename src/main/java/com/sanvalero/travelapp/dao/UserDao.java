@@ -45,6 +45,18 @@ public class UserDao {
         return rows == 1;
     }
 
+    public boolean modify(int userId, User user) throws SQLException {
+        String sql = "UPDATE users SET name = ?, username = ?, password = ? WHERE id = ?";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, user.getName());
+        statement.setString(2, user.getUsername());
+        statement.setString(3, user.getPassword());
+        statement.setInt(4, userId);
+        int rows = statement.executeUpdate();
+        return rows == 1;
+    }
+
     public Optional<User> login(String username, String password) throws SQLException {
         String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
         User user = null;
@@ -58,6 +70,7 @@ public class UserDao {
             user.setId(resultSet.getInt("id"));
             user.setName(resultSet.getString("name"));
             user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
         }
 
         return Optional.ofNullable(user);
@@ -69,6 +82,24 @@ public class UserDao {
 
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, username);
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            user = new User();
+            user.setId(resultSet.getInt("id"));
+            user.setName(resultSet.getString("name"));
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
+        }
+
+        return Optional.ofNullable(user);
+    }
+
+    public Optional<User> findById(int id) throws SQLException {
+        String sql = "SELECT * FROM users WHERE id = ?";
+        User user = null;
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()) {
             user = new User();

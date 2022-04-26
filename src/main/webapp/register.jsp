@@ -12,14 +12,15 @@
 <html lang="es">
   <head>
     <title>Register</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+    <!--"estilos bootstrap"--><link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
     <link href="css/login.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--"estilos bootstrap"--><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="theme-color" content="#7952b3">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
   <body class="text-center">
+  <!-- ajax para procesar el formulario y enviarlo al servlet de añadir usuario -->
     <script type="text/javascript">
               $(document).ready(function() {
                   $("form").on("submit", function(event) {

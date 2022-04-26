@@ -25,59 +25,75 @@
 
 <body>
 <jsp:include page="header.jsp" />
- <!--Carrusel con animación automática y manual de js-->
-    <div class="carousel">
-      <div class="arrow-left"> <!--ir a slide anterior-->
-        <span class="arrow">&#x2039;</span>
-      </div>
-      <img id=img src="images/slider1.jpg" alt="Carousel Image"> <!--la imagen cambia con js-->
-      <div class="arrow-right"> <!--ir a siguiente slide-->
-        <span class="arrow">&#x203A;</span>
-      </div>
-      <div class="indicators">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div id="titulo">Sé un nómada, recorre el mundo</p>
-    </div>
-    <!--script js para la animación del carrusel-->
-    <script type="text/javascript" src="js/slider.js"></script>
-  </header>
+<div class="wrapper">
+        <div class="slider" id="slider">
+          <ul class="slides">
+             <li class="slide" id="slider1">
+               <a href="#">
+                 <div class="caption">
+                  <p id="titulo">Sé un nómada, recorre el mundo</p>
+                  <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
+                </div>
+                 <img src="images/slider1.jpg" alt="slider 1">
+               </a>
+             </li>
+             <li class="slide" id="slider2">
+                <a href="#">
+                  <div class="caption">
+                    <p id="titulo">Sé un nómada, recorre el mundo</p>
+                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
+                  </div>
+                  <img src="images/slider2.jpg" alt="slider 2">
+               </a>
+             </li>
+             <li class="slide" id="slider3">
+                <a href="#">
+                  <div class="caption">
+                    <p id="titulo">Sé un nómada, recorre el mundo</p>
+                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
+                  </div>
+                  <img src="images/slider3.jpg" alt="slider 3">
+               </a>
+             </li>
+             <li class="slide" id="slider4">
+                <a href="#">
+                  <div class="caption">
+                    <p id="titulo">Sé un nómada, recorre el mundo</p>
+                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
+                  </div>
+                  <img src="images/slider4.jpg" alt="slider 4">
+               </a>
+             </li>
+             <li class="slide" id="slider5">
+                <a href="#">
+                  <div class="caption">
+                    <p id="titulo">Sé un nómada, recorre el mundo</p>
+                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
+                  </div>
+                  <img src="images/slider5.jpg" alt="slider 5">
+               </a>
+             </li>
+             <li class="slide">
+                <a href="#">
+                  <div class="caption">
+                    <p id="titulo">Sé un nómada, recorre el mundo</p>
+                    <p id="subtitulo">Prepara la mochila y a vivir aventuras</p>
+                  </div>
+                  <img src="images/slider1.jpg" alt="slider 5">
+               </a>
+             </li>
+          </ul>
 
-    <section class="contenedor" id="ofertas">
-        <h3>Ofertas que no puedes perderte</h3>
-        <div class="viajes-oferta">
-
-          <div class="viajes-oferta-bloque">
-            <h4>Tailandia</h4>
-            <img src="images/tailandia.jpg" alt="oferta 1">
-            <p>Desde 1099€</p>
-            <a class="boton" href="#">¡Reserva ya!</a>
-          </div>
-
-          <div class="viajes-oferta-bloque">
-            <h4>Islandia</h4>
-            <img src="images/islandia.jpg" alt="oferta 2">
-            <p>Desde 999€</p>
-            <a class="boton" href="#">¡Reserva ya!</a>
-          </div>
-
-          <div class="viajes-oferta-bloque">
-            <h4>Perú</h4>
-            <img src="images/peru.jpg" alt="oferta 3">
-            <p>Desde 899€</p>
-            <a class="boton" href="#">¡Reserva ya!</a>
-          </div>
-
-          <div class="viajes-oferta-bloque">
-            <h4>Italia</h4>
-            <img src="images/italia.jpg" alt="oferta 4">
-            <p>Desde 499€</p>
-            <a class="boton" href="#">¡Reserva ya!</a>
-          </div>
+          <ul class="slider-controler">
+            <li><a href="#slider1">&bullet;</a></li>
+            <li><a href="#slider2">&bullet;</a></li>
+            <li><a href="#slider3">&bullet;</a></li>
+            <li><a href="#slider4">&bullet;</a></li>
+            <li><a href="#slider5">&bullet;</a></li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </header>
 
     <section class="contenedor">
         <h3>¿Por qué elegir Nomads Adventures?</h3>
@@ -88,90 +104,97 @@
               <i class="fas fa-plane"></i>
               <h4>Buscamos tu vuelo</h4>
               <p>Buscamos el vuelo que mejor se adapte a tus necesidades y ajustado a tu presupuesto</p>
-              <a class="boton" href="#">Saber más</a>
+              <a class="boton" id="open1">Saber más</a>
             </div>
             <div class="beneficios-bloque" id="beneficio2">
               <i class="fas fa-globe-africa"></i>
               <h4>Más de 50 destinos</h4>
               <p>Cada día trabajamos para buscar nuevos destinos donde vivir aventuras increíbles.</p>
-              <a class="boton" href="#">Saber más</a>
+              <a class="boton" id="open2">Saber más</a>
             </div>
             <div class="beneficios-bloque" id="beneficio3">
               <i class="fas fa-map-marked-alt"></i>
               <h4>Asistencia durante el viaje</h4>
               <p>No viajarás sol@. Durante todo el viaje te acompañará un coordinador experto</p>
-              <a class="boton" href="#">Saber más</a>
+              <a class="boton" id="open3">Saber más</a>
             </div>
           </div>
         </div>
     </section>
 
-    <section class="contenedor-negro">
-      <div class="nuestros-viajes-contenedor">
-        <h3><a name="nuestros-viajes">Nuestros viajes</a></h3>
+    <!-- Modales de javascript -->
+    <!-- Modal del bloque 1 de beneficios-->
+        <div class="modal-container" id="modal1">
+          <div class="modal">
+            <button class="close-btn" id="close1"> <!--botón para ejecutar cierre-->
+              <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-header">
+              <h3>Vuelos</h3>
+            </div>
+            <div class="modal-content">
+              <p>No estás obligado a coger un vuelo concreto.
+                Te ayudamos a buscar el vuelo según tu ciudad de origen y los horarios que mejor se ajusten.
+                Si nos dices tu presupuesto, intentaremos ofrecerte un vuelo lo más ajustado posible.
+              </p>
+              <br>
+              <p>¿Quieres alargar tu viaje y volar unos días antes o quedarte más tiempo?
+                No hay ningún problema, así puedes aprovechar al máximo el destino.
+                Buscamos también vuelos según las fechas de cada viajero.
+              </p>
+                </div>
+            </div>
+          </div>
+          <!--script js para abrir y cerrar el modal-->
+          <script src="js/modal.js"></script>
 
-        <div class="nuestros-viajes">
-          <div class="nuestros-viajes-bloque">
-            <img src="images/mexico.jpg" alt="mexico" href="#">
-            <h4><a href="#">México</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/jordania.jpg" alt="jordania" href="#">
-            <h4><a href="#">Jordania</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/londres.jpg" alt="londres" href="#">
-            <h4><a href="#">Londres</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/japon.jpg" alt="japón" href="#">
-            <h4><a href="#">Japón</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/nepal.jpeg" alt="nepal" href="#">
-            <h4><a href="#">Nepal</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/islandia.jpg" alt="islandia" href="#">
-            <h4><a href="#">Islandia</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/tailandia.jpg" alt="tailandia" href="#">
-            <h4><a href="#">Tailandia</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/peru.jpg" alt="peru" href="#">
-            <h4><a href="#">Perú</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/nueva york.jpg" alt="nueva york" href="#">
-            <h4><a href="#">Nueva York</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/costa rica.jpg" alt="costa rica" href="#">
-            <h4><a href="#">Costa Rica</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/italia.jpg" alt="italia" href="#">
-            <h4><a href="#">Italia</a></h4>
-          </div>
-          <div class="nuestros-viajes-bloque">
-            <img src="images/paris.jpg" alt="paris" href="#">
-            <h4><a href="#">París</a></h4>
-          </div>
-        </div>
+            <!-- Modal del bloque 2 de beneficios-->
+            <div class="modal-container" id="modal2">
+              <div class="modal">
+                <button class="close-btn" id="close2"> <!--botón para ejecutar cierre-->
+                  <i class="fa fa-times"></i>
+                </button>
+                <div class="modal-header">
+                  <h3>Destinos</h3>
+                </div>
+                <div class="modal-content">
+                  <p>En nuestra web puedes consultar todos nuestros destinos y los viajes confirmados para cada destino.
+                    Nuestros destinos e itinerarios buscan aprovechar al máximo las infraestructuras y la cultura local del país de destino.
+                  </p>
+                  <br>
+                  <p>¿Tienes dudas sobre qué destino elegir?
+                    Puedes preguntarnos y te aconsejaremos lo mejor posible.
+                    Además, nuestros viajes se clasifican en "moods": aventura, relax, cultura e historia,... para ayudarte a tomar una decisión.
+                  </p>
+                    </div>
+                </div>
+              </div>
+            <!--script js para abrir y cerrar el modal-->
+            <script src="js/modal2.js"></script>
 
-        <div class="buscador-viajes">
-          <span class="icono"><i class="fas fa-search"></i></span>
-          <input type="search" id="buscador" value="Buscar viajes">
-       </div>
-      </div>
-    </section>
+         <!-- Modal del bloque 3 de beneficios-->
+        <div class="modal-container" id="modal3">
+          <div class="modal">
+            <button class="close-btn" id="close3"> <!--botón para ejecutar cierre-->
+              <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-header">
+              <h3>Coordinador</h3>
+            </div>
+            <div class="modal-content">
+              <p>Nos aseguramos de que los viajeros tengan la mejor experiencia y no se tengan que preocupar por nada durante el viaje.
+                Durante todo el viaje estaréis acompañados de un coordinador o coordinadora.
+              </p>
+              <br>
+              <p>¿Quién es un coordinador?
+                Es un viajero experto que se encargará de toda la logística, planficiación y gestión del viaje.
+                Será un compañero más que ayudará a que sea una experiencia inolvidable.
+              </p>
+                </div>
+            </div>
+          </div>
+          <!--script js para abrir y cerrar el modal-->
+          <script src="js/modal3.js"></script>
 
-    <div style="height: 150px; overflow: hidden;" >
-      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-        <path d="M0.00,49.99 C122.68,210.69 251.92,17.26 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #333;"></path>
-      </svg>
-    </div>
 <jsp:include page="footer.jsp" />
 

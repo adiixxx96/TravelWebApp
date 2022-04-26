@@ -1,17 +1,18 @@
 package com.sanvalero.travelapp.domain;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Booking {
     private String code;
-    private LocalDate bookingDate;
+    private Date bookingDate;
     private User user;
     private Trip trip;
 
     public Booking() {
     }
 
-    public Booking(String code, LocalDate bookingDate, User user, Trip trip) {
+    public Booking(String code, Date bookingDate, User user, Trip trip) {
         this.code = code;
         this.bookingDate = bookingDate;
         this.user = user;
@@ -26,11 +27,11 @@ public class Booking {
         this.code = code;
     }
 
-    public LocalDate getBookingDate() {
+    public Date getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(LocalDate bookingDate) {
+    public void setBookingDate(Date bookingDate) {
         this.bookingDate = bookingDate;
     }
 

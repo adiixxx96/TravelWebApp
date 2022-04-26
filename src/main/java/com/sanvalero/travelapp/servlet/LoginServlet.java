@@ -4,6 +4,7 @@ package com.sanvalero.travelapp.servlet;
 import com.sanvalero.travelapp.dao.Database;
 import com.sanvalero.travelapp.dao.UserDao;
 import com.sanvalero.travelapp.domain.User;
+import com.sanvalero.travelapp.exception.UserAlreadyExistsException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,11 +15,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.io.PrintWriter;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
@@ -27,14 +30,13 @@ public class LoginServlet extends HttpServlet {
         try {
             Optional<User> user = userDao.login(username, password);
             if (user.isPresent()) {
+                //Asignamos currentuser para mantener al usuario logueado durante la sesión
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentUser", user.get());
-                System.out.println("sesión iniciada");
                 response.sendRedirect("index.jsp");
             } else {
                 response.sendRedirect("loginincorrect.jsp");
             }
-            System.out.println("aqui");
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }

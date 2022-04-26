@@ -5,6 +5,7 @@ import com.sanvalero.travelapp.domain.Trip;
 import com.sanvalero.travelapp.domain.User;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,7 +16,7 @@ public class BookingDao {
         this.connection = connection;
     }
 
-    public void add(Booking booking, User user, Trip trip) throws SQLException {
+    public void add(User user, Trip trip) throws SQLException {
         String sql = "INSERT INTO bookings (code, user_id, trip_id, booking_date) VALUES (?, ?, ?, ?)";
 
         connection.setAutoCommit(false);
@@ -30,4 +31,46 @@ public class BookingDao {
         connection.commit();
         connection.setAutoCommit(true);
     }
+
+    public boolean delete(String code) throws SQLException {
+        String sql = "DELETE FROM bookings WHERE code = ?";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, code);
+        int rows = statement.executeUpdate();
+
+        return rows == 1;
+    }
+
+    public List<Booking> findAll(User user) throws SQLException {
+        String sql = "SELECT * FROM bookings WHERE user_id = ? ORDER BY booking_date";
+        ArrayList<Booking> bookings = new ArrayList<>();
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, user.getId());
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            Booking booking = fromResultSet(resultSet);
+            bookings.add(booking);
+        }
+
+        return bookings;
+    }
+
+    private Booking fromResultSet(ResultSet resultSet) throws SQLException {
+        Booking booking = new Booking();
+        booking.setCode(resultSet.getString("code"));
+
+        UserDao userDao = new UserDao(connection);
+        String userId = resultSet.getString("user_id");
+        User user = userDao.findById(Integer.parseInt(userId)).get();
+        booking.setUser(user);
+        TripDao tripDao = new TripDao(connection);
+        String tripId = resultSet.getString("trip_id");
+        Trip trip = tripDao.findById(Integer.parseInt(tripId)).get();
+        booking.setTrip(trip);
+        booking.setBookingDate(resultSet.getDate("booking_date"));
+        return booking;
+    }
+
 }
