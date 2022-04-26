@@ -1,0 +1,37 @@
+CREATE TABLE users (
+id NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) CONSTRAINT pk_user_id PRIMARY KEY,
+name VARCHAR2(20),
+username VARCHAR2(20),
+password VARCHAR2(20)
+);
+
+CREATE TABLE destinations (
+id NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) CONSTRAINT pk_destination_id PRIMARY KEY,
+name VARCHAR2(20),
+area VARCHAR2(30),
+score NUMBER(3,1)
+);
+
+
+CREATE TABLE trips (
+id NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) CONSTRAINT pk_trip_id PRIMARY KEY,
+destination_id NUMBER,
+start_date DATE,
+end_date DATE,
+price NUMBER (6,2),
+CONSTRAINT fk_destination_id FOREIGN KEY(destination_id) REFERENCES destinations(id)
+);
+
+CREATE TABLE bookings (
+code VARCHAR2(10),
+user_id NUMBER,
+trip_id NUMBER,
+booking_date DATE,
+CONSTRAINT fk_user_id FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
+CONSTRAINT fk_trip_id FOREIGN KEY(trip_id) REFERENCES trips(id)
+);
+
+SELECT * FROM USERS;
+
+ALTER TABLE users
+ADD CONSTRAINT u_username UNIQUE(username);
