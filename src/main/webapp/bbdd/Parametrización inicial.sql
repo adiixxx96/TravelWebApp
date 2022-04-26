@@ -22,7 +22,6 @@ EXCEPTION
     ROLLBACK;
 END;
 
-
 --Parametrizacion DESTINATIONS
 BEGIN
     INSERT INTO DESTINATIONS(NAME, AREA, SCORE) VALUES ('Tailandia', 'Sudeste Asiatico', 9.2);

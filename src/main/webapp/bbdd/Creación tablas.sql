@@ -5,6 +5,9 @@ username VARCHAR2(20),
 password VARCHAR2(20)
 );
 
+ALTER TABLE users
+ADD CONSTRAINT u_username UNIQUE(username);
+
 CREATE TABLE destinations (
 id NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1) CONSTRAINT pk_destination_id PRIMARY KEY,
 name VARCHAR2(20),
@@ -23,7 +26,7 @@ CONSTRAINT fk_destination_id FOREIGN KEY(destination_id) REFERENCES destinations
 );
 
 CREATE TABLE bookings (
-code VARCHAR2(10),
+code VARCHAR2(36),
 user_id NUMBER,
 trip_id NUMBER,
 booking_date DATE,
@@ -31,7 +34,4 @@ CONSTRAINT fk_user_id FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCAD
 CONSTRAINT fk_trip_id FOREIGN KEY(trip_id) REFERENCES trips(id)
 );
 
-SELECT * FROM USERS;
-
-ALTER TABLE users
-ADD CONSTRAINT u_username UNIQUE(username);
+DROP TABLE destinations;
