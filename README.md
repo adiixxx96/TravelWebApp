@@ -13,13 +13,13 @@ Puedes loguearte con:
 - contraseña: santiago1234
 
 Detallo aquí las funcionalidades que he desarrollado de las pedidas:
-  Obligatorios:
+Obligatorios:
   - Dar de alta: usuarios (mediante el registro) y reservas
   - Listado y vista detalle: listado de viajes, destinos y reservas. Detalle de viajes, reservas, destino y usuarios.
   - Búsqueda: búsqueda de viajes y destinos
   - Dar de baja: usuarios (mediante borrar cuenta) y reservas (cancelando la reserva)
   - Diseño: he usado bootstrap y css customizado mío
-  Opcionales:
+Opcionales:
   - Login de usuarios
   - Repositorio github del proyecto con gitflow: https://github.com/adiixxx96/TravelWebApp
   - Modificar: se pueden modificar usuarios
